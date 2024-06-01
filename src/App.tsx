@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, Grid } from '@mui/material';
+import Counter from './components/Counter';
+import RichTextEditor from './components/RichTextEditor';
+import UserDataForm from './components/UserDataForm';
+import DisplayData from './components/DisplayData';
+import FluidAnimation from './components/FluidAnimation';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <Counter />
+        </Grid>
+        <Grid item xs={6}>
+          <RichTextEditor />
+        </Grid>
+        <Grid item xs={6}>
+          <UserDataForm />
+        </Grid>
+        <Grid item xs={6}>
+          <DisplayData />
+        </Grid>
+        <Grid item xs={16} style={{marginTop:"6rem"}}>
+          <FluidAnimation />
+        </Grid>
+      </Grid>
+    </Container>
   );
-}
+};
 
 export default App;
